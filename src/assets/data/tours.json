@@ -1,0 +1,144 @@
+[
+  {
+    "title": "Golden Temple",
+    "city": "Amritsar",
+    "address": "Golden Temple Rd, Atta Mandi, Katra Ahluwalia, Amritsar, Punjab 143006, India",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 5,
+    "desc": "The Golden Temple, also known as Sri Harmandir Sahib, is a Gurdwara located in the city of Amritsar, Punjab, India.",
+    "reviews": [],
+    "photo": "/tour-images/tour-img01.jpg",
+    "featured": true
+},
+  {
+    "title": "Charminar",
+    "city": "Hyderabad",
+    "address": "Char Kaman, Ghansi Bazaar, Hyderabad, Telangana 500002, India",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 10,
+    "desc": "The Charminar is a monument and mosque in Hyderabad, Telangana, India.",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img02.jpg",
+    "featured": true
+  },
+  {
+    "title": "Snowy Mountains, Thailand",
+    "city": "Bangkok",
+    "address": "Somewhere in Thailand",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "this is the description",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img03.jpg",
+    "featured": true
+  },
+  {
+    "title": "Mysore Palace",
+    "city": "Mysore",
+    "address": "Sayyaji Rao Rd, Agrahara, Chamrajpura, Mysuru, Karnataka 570001, India",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 4,
+    "desc": "Mysore Palace is a historical palace and a royal residence at Mysore in the Indian State of Karnataka.",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img04.jpg",
+    "featured": true
+  },
+  {
+    "title": "Gateway of India",
+    "city": "Mumbai",
+    "address": "Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 7,
+    "desc": "The Gateway of India is an arch monument built during the 20th century in Mumbai, India.",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img05.jpg",
+    "featured": true
+  },
+  {
+    "title": "Hawa Mahal",
+    "city": "Jaipur",
+    "address": "Hawa Mahal Rd, Badi Choupad, J.D.A. Market, Pink City, Jaipur, Rajasthan 302002, India",
+    "distance": 500,
+    "price": 500,
+    "maxGroupSize":3,
+    "desc": "Hawa Mahal is a palace in Jaipur, India. It is constructed of red and pink sandstone.",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img06.jpg",
+    "featured": true
+  },
+  {
+    "title": "Red Fort",
+    "city": "Delhi",
+    "address": "Netaji Subhash Marg, Lal Qila, Chandni Chowk, New Delhi, Delhi 110006, India",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 10,
+    "desc": "The Red Fort is a historic fort in the city of Delhi in India.",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img07.jpg",
+    "featured": true
+  },
+  {
+    "title": "Taj Mahal, India",
+    "city": "Agra",
+    "address":"Dharmapuri, Forest Colony, Tajganj, Agra, Uttar Pradesh 282001, India",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 5,
+    "desc": "The Taj Mahal is an ivory-white marble mausoleum on the right bank of the Yamuna river in the Indian city of Agra.",
+    "raviews": [],
+
+    "photo" :"/tour-images/tour-img03.jpg",
+    "featured": true
+  },
+  {
+    "title": "Qutub Minar",
+    "city": "Delhi",
+    "address": "Mehrauli, New Delhi, Delhi 110030, India",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 9,
+    "desc": "The Qutub Minar, also spelled as Qutab Minar, is a minaret that forms part of the Qutb complex, a UNESCO World Heritage Site in the Mehrauli area of Delhi, India.",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img08.jpg",
+    "featured": true
+  },
+  {
+    "title": "Jaflong, Sylhet",
+    "city": "Sylhet",
+    "address": "Somewhere in Sylhet",
+    "distance": 100,
+    "price": 99,
+    "maxGroupSize": 5,
+    "desc": "this is the description",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img08.jpg",
+    "featured": false
+  },
+  {
+    "title": "Cox's Bazar Sea Beach",
+    "city": "Chittagong",
+    "address": "Somewhere in Chittagong",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "this is the description",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img09.jpg",
+    "featured": false
+  }
+]
