@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import '../styles/tour-details.css'
-import { Container, Row, Col, From, ListGroup } from 'reactstrap'
+import { Container, Row, Col, Form, ListGroup } from 'reactstrap'
 import { useParams } from 'react-router-dom'
 
 import calculateAvgRating from "../utils/avgRating";
 import avatar from "../assets/images/avatar.jpg";
 import Booking from "../components/Booking/Booking";
-import demo from "../assets/images/demo.mp3"
 import Newsletter from "../shared/Newsletter";
 import useFetch from './../hooks/useFetch'
 import { BASE_URL } from './../utils/config'
@@ -17,7 +16,7 @@ const TourDetails = () => {
   const { id } = useParams()
   const reviewMsgRef = useRef("")
   const [tourRating, setTourRating] = useState(null)
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext)
 
   //fetch from the database
   const { data: tour, loading, error } = useFetch(`${BASE_URL}/tours/${id}`)
@@ -76,8 +75,38 @@ const TourDetails = () => {
     "audio3.mp3",
   ]);
 
-  const handlePlayPause = (index) => {
-    // Implement play/pause functionality for the audio file at the given index
+  const [speechSynthesis, setSpeechSynthesis] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentPosition, setCurrentPosition] = useState(0);
+  const [selectedLanguage, setSelectedLanguage] = useState('en-US'); // Default language is English
+
+  useEffect(() => {
+    // Initialize speech synthesis
+    const synth = window.speechSynthesis;
+    setSpeechSynthesis(synth);
+  }, []);
+
+  const handlePlayPause = () => {
+    if (!speechSynthesis) return;
+
+    if (isPlaying) {
+      speechSynthesis.cancel();
+      setIsPlaying(false);
+      setCurrentPosition(0);
+    } else {
+      const utterance = new SpeechSynthesisUtterance(desc);
+      utterance.lang = selectedLanguage; // Set the language of the utterance
+      utterance.onend = () => {
+        setIsPlaying(false);
+        setCurrentPosition(0);
+      };
+      speechSynthesis.speak(utterance);
+      setIsPlaying(true);
+    }
+  };
+
+  const handleLanguageChange = (event) => {
+    setSelectedLanguage(event.target.value);
   };
 
   return <>
@@ -134,15 +163,21 @@ const TourDetails = () => {
                     </Col>
                     <Col lg='6'>
                       <div className="audio__section ">
-                        {audioFiles.map((audio, index) => (
-                          <div key={index} className="audio__item">
-                            <audio controls>
-                              <source src={audio} type="audio/mpeg" />
-                              Your browser does not support the audio element.
-                            </audio>
-                            <button onClick={() => handlePlayPause(index)}>Play/Pause</button>
-                          </div>
-                        ))}
+                        <div className="audio__item">
+                          <button onClick={handlePlayPause}>{isPlaying ? "Pause" : "Play"}</button>
+                          <select value={selectedLanguage} onChange={handleLanguageChange}>
+                            <option value="en-US">English</option>
+                            <option value="es-ES">Spanish</option>
+                            <option value="fr-FR">French</option>
+                            <option value="de-DE">German</option>
+                            <option value="it-IT">Italian</option>
+                            <option value="ja-JP">Japanese</option>
+                            <option value="ko-KR">Korean</option>
+                            <option value="pt-PT">Portuguese</option>
+                            <option value="ru-RU">Russian</option>
+                            <option value="zh-CN">Chinese (Simplified)</option>
+                          </select>
+                        </div>
                       </div>
                     </Col>
                   </Row>
@@ -173,7 +208,7 @@ const TourDetails = () => {
                   <ListGroup className="user__reviews">
                     {
                       reviews?.map(review => (
-                        <div className="review__item">
+                        <div className="review__item" key={review.id}>
                           <img src={avatar} alt="" />
 
                           <div className="w-100">
@@ -212,4 +247,4 @@ const TourDetails = () => {
   </>
 }
 
-export default TourDetails
+export default TourDetails;
